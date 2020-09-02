@@ -87,6 +87,11 @@ flake8 exercises/fizzbuzz/fizzbuzz.py
 mypy exercises/fizzbuzz/fizzbuzz.py
 ```
 
+## Notes sur [Visual Studio Code](https://code.visualstudio.com/)/[Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* Pour sélectionner l'interpréteur ou l'environnement Python adéquat, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Select Interpreter*.
+* Pour ouvrir un REPL Python dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Start REPL*.
+* Pour ouvrir un terminal dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Terminal: Create New Integrated Terminal*.
+
 ## Notes sur le projet
 Cette section contient des notes sur la façon dont le projet a été créé.
 **Ces actions ne sont pas à reproduire lors de l'usage du projet.**
