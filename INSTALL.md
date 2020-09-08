@@ -93,68 +93,85 @@ Dans le contexte de la programmation, il sauvegarde et suit les modifications d'
 L'outil que nous allons utiliser pour cela se nomme [`git`](https://git-scm.com/).
 C'est à l'heure actuelle (en 2020) le logiciel open source le plus utilisé pour cette tâche.
 
-Continuer ???
+L'outil `git` gérera votre projet localement sur une machine mais il est très utile de faire héberger son projet sur le web.
+C'est ce que propose la plateforme [github](https://github.com/).
+Ce service offre la possibilité de sauvegarder son projet dans le cloud afin de pouvoir le récupérer de n'importe quelle machine connectée.
+
 ### Création d'un compte `github`
+À l'adresse https://github.com/join, créer un compte en précisant :
+* le nom d'utilisateur (*username*) `uvsqXXXXXXXX` en remplaçant `XXXXXXXX` par votre numéro d'étudiant,
+* l'adresse mail (*Email address*) `prenom.nom@ens.uvsq.fr`,
+* et un mot de passe (*Password*).
+
+Il faut ensuite consulter les mails à cette adresse pour confirmer l'adresse d'inscription.
 
 ### Copier le projet dans son espace `github` personnel
+Le dépôt git contenant l'ensemble du projet n'est pas modifiable par tout le monde.
+Pour pouvoir faire des changements dessus, il faut donc d'abord le *copier* dans votre espace personnel.
+Sous github, cette opétation se nomme un **fork** et est utilisé pour copier un dépôt entre deux espaces utilisateurs.
+
+La procédure pour cela est la suivante :
+1. se rendre sur la page du dépôt git à copier (https://github.com/hal91190/tpl-python dans notre cas),
+1. cliquer sur le bouton *Fork* en haut à droite de l'écran
+1. sélectionner votre espace personnel comme destination du fork
+
+Vous disposez maintenant d'une copie personnelle du dépôt avec une URL qui devrait ressembler à https://github.com/uvsqXXXXXXXX/tpl-python.
+
+### Installer `git`
+L'étape suivante consiste à récupérer une copie locale du projet.
+Nous utiliserons pour cela l'interface `git` intégrée à l'éditeur de texte mais cette dernière s'appuie sur l'outil en ligne de commande `git` que nous allons installer maintenant.
+
+#### Sous Windows
+1. Télécharger [git sous Windows](https://git-scm.com/download/win)
+1. Double-cliquer sur le fichier téléchargé pour lancer l'installation
+3. Conserver les choix par défaut proposés lors de l'installation
+
+#### Sous Mac OS
+
+#### Sous Linux
+L'installation de `git` est très simple mais dépend de la distribution Linux installée.
+Par exemple, avec une distribution `debian`, il suffit de taper dans un terminal :
+```bash
+sudo apt update
+sudo apt install git
+```
+
+Pour trouver la commande correspondant à votre système, rendez-vous sur la page [Download for Linux and Unix](https://git-scm.com/download/linux) et choisissez les commandes adéquates.
 
 ## Installer un éditeur de texte
 De nombreuses applications peuvent être utilisées pour saisir un document textuel sur un ordinateur ([LibreOffice Writer](https://www.libreoffice.org/discover/writer/), [Notepad++](https://notepad-plus-plus.org/), ...).
 Dans le contexte de la programmation, il est important que 
 [Visual Studio Code](https://code.visualstudio.com/)
 
-## Prérequis
-* Un interpréteur Python (version >= 3.8)
-  * en juin 2020 :
-    3.7 ([Debian](https://packages.debian.org/search?keywords=python3&searchon=names&exact=1&suite=all&section=all)/stable),
-    3.8 ([Debian](https://packages.debian.org/search?keywords=python3&searchon=names&exact=1&suite=all&section=all)/testion),
-    3.5 ([Ubuntu](https://packages.ubuntu.com/search?keywords=python3&searchon=names&exact=1&suite=all&section=all)/16.04),
-    3.6 ([Ubuntu](https://packages.ubuntu.com/search?keywords=python3&searchon=names&exact=1&suite=all&section=all)/18.04),
-    3.8 ([Ubuntu](https://packages.ubuntu.com/search?keywords=python3&searchon=names&exact=1&suite=all&section=all)/20.04),
-    3.8 ([Windows/python.org](https://www.python.org/downloads/windows/)), 3.8 ([Mac OS X/python.org](https://www.python.org/downloads/mac-osx/)),
-    3.7/3.8 ([Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)/tous systèmes),
-    3.8 ([python.org](https://www.python.org/downloads/)/tous systèmes)
-* Le gestionnaire de paquets Python [`pip`](https://pip.pypa.io/en/stable/)
-  * la distribution Python de [python.org](https://www.python.org/) à partir de la version 3.4 contient `pip`
-* Le module `venv` pour la gestion des environnements virtuels ([tutoriel](https://docs.python.org/3/tutorial/venv.html))
-  * Le module `venv` existe dans la bibliothèque standard Python depuis la version 3.3
 * Un IDE
   * par exemple, [Visual Studio Code](https://code.visualstudio.com/) avec l'extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) ([tutoriel](https://code.visualstudio.com/docs/python/python-tutorial))
 
-### Remarques
-* Les distributions Python de [python.org](https://www.python.org/) ou [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html) fournissent de base l'ensemble des prérequis Python.
-* L'installation de base de la distribution Anaconda contient l'IDE [Spyder](https://www.spyder-ide.org/) et les notebooks [Jupyter](https://jupyter.org/). Ce n'est pas le cas de Miniconda qui est beaucoup plus légère (400 Mo contre 3 Go).
-* L'installation de paquet python avec `pip` peut provoquer une compilation et donc nécessiter des outils adéquats sur la machine. Ce n'est pas le cas avec Anaconda/Miniconda.
+## Récupérer et initialiser le projet localement
+### Création d'une copie locale du projet
+Récupérer localement le projet `github`
+- clonage du dépôt avec VSCode
+  VSCode supporte github en utilisant le login de l'utilisateur github => clonage très simple
 
-## Préparation initiale du projet
-Les étapes de cette section ne sont à effectuer qu'une fois lors de la création du projet local.
+- ouverture du README => installation de l'extension Markdown pour la prévisualisation
 
-### Cloner le dépôt
-```bash
-git clone https://github.com/hal91190/tpl-python.git projet
-```
-Il est préférable de *forker* au préalable le projet dans son espace github personnel pour ensuite le cloner.
-Cela permet par la suite de valider les modifications ce qui n'est pas possible sur le projet original à cause des droits d'accès.
+- ouverture de hello.py => installation de l'extension MS Python
+
+- dans VSCode
+  choisir l'interpréteur "Python 3.8.X XX-bit ('envpython': conda)" (Ctrl+Shift+P, "Python: Select Environment" ou click en bas à gauche)
+  choisir le shell par défaut "Command Prompt" (Ctrl+Shift+P, "Terminal: Select Default Shell")
+
+  exécuter hello.py -> OK
+  exécuter fizzbuzz.py et test_fizzbuzz.py -> OK
+  exécuter explot.py -> OK
+  exécuter exjupyter.ipnb -> OK après sélection de l'interpréteur en haut à droite
+  exécuter gui/exemple0X.py -> OK
 
 ### Création et activation de l'environnement
-* Avec la distribution [python.org](https://www.python.org/)
-  ```bash
-  python3 -m venv .venv
-  source .venv/bin/activate
-  ```
 * Avec la distribution [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
   ```bash
   conda env create
   conda activate envpython
   ```
-
-### Installation des dépendances
-* Avec la distribution [python.org](https://www.python.org/)
-  ```bash
-  pip install -r requirements.txt
-  ```
-* Avec la distribution [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-
   L'installation des dépendances est faite en même temps que la création de l'environnement.
 
 ## Utilisation courante du projet
@@ -193,41 +210,3 @@ mypy exercises/fizzbuzz/fizzbuzz.py
 * Pour sélectionner l'interpréteur ou l'environnement Python adéquat, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Select Interpreter*.
 * Pour ouvrir un REPL Python dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Start REPL*.
 * Pour ouvrir un terminal dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Terminal: Create New Integrated Terminal*.
-
-## Notes sur le projet
-Cette section contient des notes sur la façon dont le projet a été créé.
-**Ces actions ne sont pas à reproduire lors de l'usage du projet.**
-
-### Création et activation
-* Avec la distribution [python.org](https://www.python.org/)
-  ```bash
-  python3 -m venv .venv
-  source .venv/bin/activate
-  ```
-* Avec la distribution [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-  ```bash
-  conda create -name envpython
-  conda activate envpython
-  conda install numpy matplotlib jupyter
-  ```
-
-### Installation des _linters_ ([flake8](https://flake8.pycqa.org/en/latest/index.html#), [mypy](http://mypy-lang.org/))
-* Avec la distribution [python.org](https://www.python.org/)
-  ```bash
-  pip install flake8
-  pip install mypy
-  ```
-* Avec la distribution [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-  ```bash
-  conda install flake8 mypy
-  ```
-
-### Sauvegarder l'environnement
-* Avec la distribution [python.org](https://www.python.org/)
-  ```bash
-  pip freeze > requirements.txt
-  ```
-* Avec la distribution [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-  ```bash
-  conda env export --name envpython > environment.yml
-  ```
