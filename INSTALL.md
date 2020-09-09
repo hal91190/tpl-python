@@ -224,6 +224,16 @@ Cette étape précise à VSCode quel *shell* utiliser pour le terminal.
 Pour isoler l'environnement du projet d'éventuelles autres versions de Python ou de bibliothèques, nous allons créer un environnement `conda` spécifique.
 
 1. Dans VSCode, ouvrir un terminal (menu *Terminal/New Terminal* ou *View/Terminal*)
+    * sous Windows, `conda` n'est pas accessible dans le "Command Prompt"; pour palier ce problème, il faut personnaliser le paramètre `terminal.integrated.shellArgs.windows` de VSCode (*Ctrl+,*, rechercher "terminal shell windows", "Edit in settings.json"). Par exemple (adapter les chemins) :
+        ```yaml
+        {
+            // Personnalise le terminal à exécuter sur Windows.
+            "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+            "workbench.iconTheme": null,
+            "terminal.integrated.shellArgs.windows": ["/K", "C:\\Users\\moi\\miniconda3\\Scripts\\activate.bat C:\\Users\\moi\\miniconda3"]
+        }
+        ```
+    * une autre option sous Windows est de lancer VSCode à partir d'un "Anaconda prompt"
 1. Taper
     ```bash
     conda env create
@@ -239,24 +249,10 @@ Pour isoler l'environnement du projet d'éventuelles autres versions de Python o
     * accepter l'installation de l'extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 1. Sélectionner l'interpréteur Python 3.8 dans l'environnement l1-python "Python 3.8.X XX-bit ('l1-python': conda)"
     * cliquer en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Environment")
-<!-- TODO jupyter nécessite une autre extension ? -->
-<!-- TODO activer les linters -->
+1. Activer les outils de vérification statique (*Linters*)
+    1. Ouvrir la palette de commande (*Ctrl+Shift+P*)
+    1. Sélectionner la commande "Python: Select Linter"
+    1. Choisir `flake8` dans la liste
 
-## Références
-### Python
-* [Site officiel](https://www.python.org/)
-* [Documentation](https://docs.python.org/fr/3/) en français
-* [Carte de référence](https://perso.limsi.fr/pointal/python:abrege), ensemble de [liens](https://perso.limsi.fr/pointal/liens:python_links), L. Pointal
-* [Cours de Python](https://python.sdv.univ-paris-diderot.fr/), Patrick Fuchs et Pierre Poulain
-
-### Git
-* [Site officiel](https://git-scm.com/)
-* [Documentation](https://git-scm.com/doc)
-* Carte de référence (en français) ([web](https://training.github.com/downloads/fr/github-git-cheat-sheet/), [pdf](https://training.github.com/downloads/fr/github-git-cheat-sheet.pdf))
-* Le livre [Pro Git](https://git-scm.com/book/fr/v2) (*Scott Chacon et Ben Straub, Apress*) en français
-
-### Visual Studio Code
-* [Site officiel](https://code.visualstudio.com/)
-* [Documentation](https://code.visualstudio.com/docs) (en anglais)
-* [Python in Visual Studio Code](https://code.visualstudio.com/docs/languages/python)
-* Extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) ([tutoriel](https://code.visualstudio.com/docs/python/python-tutorial))
+## Utiliser le projet
+Pour utiliser le projet, consulter le [README.md](README.md) du projet.
