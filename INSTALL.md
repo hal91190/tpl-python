@@ -16,8 +16,15 @@ Il en existe plusieurs mais nous nous appuyerons sur la distribution [Miniconda]
     * pour Mac OS, télécharger [Miniconda3 MacOSX 64-bit pkg](https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg)
     * pour Linux, télécharger [Miniconda3 Linux 64-bit](https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh)
 1. Installer Miniconda
-    * pour Windows, double-cliquer sur le fichier `.exe` téléchargé précédemment puis accepter les choix par défaut
+    * pour Windows, double-cliquer sur le fichier `.exe` téléchargé précédemment puis accepter les choix par défaut **sauf à la dernière étape** :
+      - accepter la licence ("I Agree")
+      - "Install for", "Just Me (recommended)" ("Next")
+      - "Choose Install Location", ("Next")
+      - "Register Miniconda3 as my default Python 3.8", ("Install")
+      - "Installation Complete", ("Next")
+      - "Completing Miniconda3...", **décocher tout** ("Finish")
     * pour Mac OS, double-cliquer sur le fichier `.pkg` téléchargé précédemment puis accepter les choix par défaut
+    <!-- TODO : détailler la procédure pour Mac OS -->
     * pour Linux, ouvrir un terminal dans le répertoire où se trouve le fichier téléchargé et taper :
         ```bash
         sh Miniconda3-latest-Linux-x86_64.sh
@@ -106,27 +113,47 @@ Ce service offre la possibilité de sauvegarder son projet dans le cloud afin de
 Il faut ensuite consulter les mails à cette adresse pour confirmer l'adresse d'inscription.
 
 ### Copier le projet dans son espace `github` personnel
-Le dépôt git contenant l'ensemble du projet n'est pas modifiable par tout le monde.
+> Un "projet" sous `git` et `github` se nomme un *dépôt* (*repository* en anglais).
+> Attention car la notion de projet (*project*) sous `github` est différente.
+
+Le dépôt `git` contenant l'ensemble du projet n'est pas modifiable par tout le monde.
 Pour pouvoir faire des changements dessus, il faut donc d'abord le *copier* dans votre espace personnel.
-Sous github, cette opétation se nomme un **fork** et est utilisé pour copier un dépôt entre deux espaces utilisateurs.
+Sous `github`, cette opétation se nomme un **fork** et est utilisée pour copier un dépôt entre deux espaces utilisateurs.
 
 La procédure pour cela est la suivante :
-1. se rendre sur la page du dépôt git à copier (https://github.com/hal91190/tpl-python dans notre cas),
+1. se rendre sur la page `github` du dépôt à copier (https://github.com/uvsq-info/l1-python dans notre cas),
 1. cliquer sur le bouton *Fork* en haut à droite de l'écran
 1. sélectionner votre espace personnel comme destination du fork
 
-Vous disposez maintenant d'une copie personnelle du dépôt avec une URL qui devrait ressembler à https://github.com/uvsqXXXXXXXX/tpl-python.
+Vous disposez maintenant d'une copie personnelle du dépôt avec une URL qui devrait ressembler à https://github.com/uvsqXXXXXXXX/l1-python.
 
 ### Installer `git`
 L'étape suivante consiste à récupérer une copie locale du projet.
-Nous utiliserons pour cela l'interface `git` intégrée à l'éditeur de texte mais cette dernière s'appuie sur l'outil en ligne de commande `git` que nous allons installer maintenant.
+Nous utiliserons pour cela l'interface `git` intégrée à l'éditeur de texte.
+Cependant, cette dernière s'appuie sur l'outil en ligne de commande `git` que nous allons installer maintenant.
 
 #### Sous Windows
 1. Télécharger [git sous Windows](https://git-scm.com/download/win)
 1. Double-cliquer sur le fichier téléchargé pour lancer l'installation
-3. Conserver les choix par défaut proposés lors de l'installation
+1. Conserver les choix par défaut proposés lors de l'installation **sauf pour les étapes en gras ci-dessous** :
+    - accepter la licence ("Next")
+    - "Select Destination Location", ("Next")
+    - "Select Components", ("Next")
+    - "Select Start Menu Folder", ("Next")
+    - "Choosing the default editor used by Git", **choisir "Use Visual Studio Code as Git's default editor"** ("Next")
+    - "Adjusting your PATH environment", déjà sélectionné "Git from the command line and also from 3rd-party software" ("Next")
+    - "Choosing the SSH executable", déjà sélectionné "Use OpenSSH" ("Next")
+    - "Choosing HTTPS transport backend", déjà sélectionné "Use the OpenSSL library" ("Next")
+    - "Configuring the line ending conversions", déjà sélectionné "Checkout Windows-style, commit Unix-style line endings" ("Next")
+    - "Configuring the terminal emulator to use with Git Bash", déjà sélectionné "Use MinTTY (the default terminal of MSYS2)" ("Next")
+    - "Choose the default behavior of 'git pull'", déjà sélectionné "Default (fast-forward or merge)" ("Next")
+    - "Choose a credentiel helper", **choisir "None"**("Next")
+    - "Configuring extra options", déjà sélectionné "Enable file system caching" et "Enable symbolic links" ("Next")
+    - "Configuring experimental options", rien n'est sélectionné ("Install")
+    - "Completing the Git Setup Wizard", **décocher tout** ("Next")
 
 #### Sous Mac OS
+<!-- TODO : détailler la procédure pour Mac OS -->
 
 #### Sous Linux
 L'installation de `git` est très simple mais dépend de la distribution Linux installée.
@@ -138,19 +165,50 @@ sudo apt install git
 
 Pour trouver la commande correspondant à votre système, rendez-vous sur la page [Download for Linux and Unix](https://git-scm.com/download/linux) et choisissez les commandes adéquates.
 
+### Finaliser et vérifier l'installation
+1. Sous Windows, ouvrir un *Git Bash*; sous Mac OS et Linux, ouvrir un terminal et taper :
+    ```bash
+    git --version
+    ```
+    qui devrait afficher (les deux derniers numéros peuvent être différents) :
+    ```bash
+    git version 2.27.0
+    ```
+1. Dans le même terminal, taper (**en substituant votre prénom et votre nom**) :
+    ```bash
+    git config --global user.name "Prénom NOM"
+    git config --global user.email "prenom.nom@ens.uvsq.fr"
+    git config --global color.ui auto
+    ```
+1. Fermer le terminal
+
 ## Installer un éditeur de texte
 De nombreuses applications peuvent être utilisées pour saisir un document textuel sur un ordinateur ([LibreOffice Writer](https://www.libreoffice.org/discover/writer/), [Notepad++](https://notepad-plus-plus.org/), ...).
-Dans le contexte de la programmation, il est important que 
-[Visual Studio Code](https://code.visualstudio.com/)
+Dans le contexte de la programmation, il est important que le texte du programme ne soit pas modifié par des informations de mise en forme comme le ferait un logiciel de *traitement de texte* comme LibreOffice Writer.
 
-* Un IDE
-  * par exemple, [Visual Studio Code](https://code.visualstudio.com/) avec l'extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) ([tutoriel](https://code.visualstudio.com/docs/python/python-tutorial))
+Il faut donc choisir un logiciel dans la catégorie des [éditeurs de texte](https://fr.wikipedia.org/wiki/%C3%89diteur_de_texte) ou des [environnement de développement intégré](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) (*integrated development environment* ou *IDE* en anglais).
+Les différents outils de ce type varient beaucoup en terme de fonctionnalités et de complexité d'usage.
+
+Nous avons choisi le logiciel [Visual Studio Code](https://code.visualstudio.com/).
+Il est un bon compromis entre fonctionnalités et complexité tout en étant disponible pour les principales architectures et systèmes d'exploitation.
+
+### Installer Visual Studio Code
+1. Télécharger la version de [Visual Studio Code](https://code.visualstudio.com/) adapté à votre système
+1. Lancer l'installation du programme à partir du fichier téléchargé ([pour Windows](https://code.visualstudio.com/docs/setup/windows), [pour Mac OS](https://code.visualstudio.com/docs/setup/mac), [pour Linux](https://code.visualstudio.com/docs/setup/linux))
+
+Nous ne détaillons pas ici la procédure d'installation car elle ne présente pas de difficulté majeure.
 
 ## Récupérer et initialiser le projet localement
 ### Création d'une copie locale du projet
 Récupérer localement le projet `github`
 - clonage du dépôt avec VSCode
-  VSCode supporte github en utilisant le login de l'utilisateur github => clonage très simple
+    - lancer VSCode
+    - cliquer sur l'icone en forme de graphe à 3 noeuds à gauche de l'écran (Source Control ou Ctrl+Shift+G)
+    - cliquer sur le bouton "Clone Repository" à gauche de l'écran
+    - sélectionner "Clone from Github", cliquez sur "Allow" dans la boite de dialogue puis accepter les différents choix proposés dans le navigateur ou dans une boite de dialogue
+    - sélectionner le dépôt "uvsqXXXXXXXX/l1-python" puis choisissez l'emplacement local du projet
+    - ouvrir ensuite le répertoire créé ci-dessus
+
 
 - ouverture du README => installation de l'extension Markdown pour la prévisualisation
 
@@ -210,3 +268,22 @@ mypy exercises/fizzbuzz/fizzbuzz.py
 * Pour sélectionner l'interpréteur ou l'environnement Python adéquat, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Select Interpreter*.
 * Pour ouvrir un REPL Python dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Start REPL*.
 * Pour ouvrir un terminal dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Terminal: Create New Integrated Terminal*.
+
+## Références
+### Python
+* [Site officiel](https://www.python.org/)
+* [Documentation](https://docs.python.org/fr/3/) en français
+* [Carte de référence](https://perso.limsi.fr/pointal/python:abrege), ensemble de [liens](https://perso.limsi.fr/pointal/liens:python_links), L. Pointal
+* [Cours de Python](https://python.sdv.univ-paris-diderot.fr/), Patrick Fuchs et Pierre Poulain
+
+### Git
+* [Site officiel](https://git-scm.com/)
+* [Documentation](https://git-scm.com/doc)
+* Carte de référence (en français) ([web](https://training.github.com/downloads/fr/github-git-cheat-sheet/), [pdf](https://training.github.com/downloads/fr/github-git-cheat-sheet.pdf))
+* Le livre [Pro Git](https://git-scm.com/book/fr/v2) (*Scott Chacon et Ben Straub, Apress*) en français
+
+### Visual Studio Code
+* [Site officiel](https://code.visualstudio.com/)
+* [Documentation](https://code.visualstudio.com/docs) (en anglais)
+* [Python in Visual Studio Code](https://code.visualstudio.com/docs/languages/python)
+* Extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) ([tutoriel](https://code.visualstudio.com/docs/python/python-tutorial))
