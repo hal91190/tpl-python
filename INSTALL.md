@@ -153,7 +153,13 @@ Cependant, cette dernière s'appuie sur l'outil en ligne de commande `git` que n
     - "Completing the Git Setup Wizard", **décocher tout** ("Next")
 
 #### Sous Mac OS
-<!-- TODO : détailler la procédure pour Mac OS -->
+1. Installer [Homebrew](https://brew.sh/)
+1. Dans un terminal, taper :
+    ```bash
+    brew install git
+    ```
+
+Une alternative pourrait être d'installer `git` par l'intermédiaire de `conda` ([package git pour conda](https://anaconda.org/conda-forge/git)).
 
 #### Sous Linux
 L'installation de `git` est très simple mais dépend de la distribution Linux installée.
