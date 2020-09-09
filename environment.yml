@@ -1,4 +1,4 @@
-name: envpython
+name: l1-python
 channels:
   - defaults
 dependencies:

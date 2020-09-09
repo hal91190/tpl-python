@@ -193,81 +193,54 @@ Nous avons choisi le logiciel [Visual Studio Code](https://code.visualstudio.com
 Il est un bon compromis entre fonctionnalités et complexité tout en étant disponible pour les principales architectures et systèmes d'exploitation.
 
 ### Installer Visual Studio Code
-1. Télécharger la version de [Visual Studio Code](https://code.visualstudio.com/) adapté à votre système
+1. Télécharger la version de [Visual Studio Code](https://code.visualstudio.com/) adaptée à votre système
 1. Lancer l'installation du programme à partir du fichier téléchargé ([pour Windows](https://code.visualstudio.com/docs/setup/windows), [pour Mac OS](https://code.visualstudio.com/docs/setup/mac), [pour Linux](https://code.visualstudio.com/docs/setup/linux))
 
 Nous ne détaillons pas ici la procédure d'installation car elle ne présente pas de difficulté majeure.
 
 ## Récupérer et initialiser le projet localement
+Cette étape va consister à créer sur votre machine une copie du dépôt `github`.
+Nous utiliserons pour cela Visual Studio Code (abrégé en VSCode dans la suite).
+Cela nous permettra également d'en finaliser l'installation en ajoutant les extensions utiles pour le développement logiciel en Python.
+
 ### Création d'une copie locale du projet
-Récupérer localement le projet `github`
-- clonage du dépôt avec VSCode
-    - lancer VSCode
-    - cliquer sur l'icone en forme de graphe à 3 noeuds à gauche de l'écran (Source Control ou Ctrl+Shift+G)
-    - cliquer sur le bouton "Clone Repository" à gauche de l'écran
-    - sélectionner "Clone from Github", cliquez sur "Allow" dans la boite de dialogue puis accepter les différents choix proposés dans le navigateur ou dans une boite de dialogue
-    - sélectionner le dépôt "uvsqXXXXXXXX/l1-python" puis choisissez l'emplacement local du projet
-    - ouvrir ensuite le répertoire créé ci-dessus
+1. Lancer VSCode
+1. Cliquer sur l'icone en forme de graphe à 3 noeuds à gauche de l'écran (*Source Control* ou *Ctrl+Shift+G*)
+1. Cliquer sur le bouton "Clone Repository" à gauche de l'écran
+1. Sélectionner "Clone from Github", cliquez sur "Allow" dans la boite de dialogue puis accepter les différents choix proposés dans le navigateur ou dans une boite de dialogue VSCode
+1. Sélectionner le dépôt "uvsqXXXXXXXX/l1-python" dans la liste déroulante puis choisissez l'emplacement local du projet
+1. Ouvrir ensuite le répertoire créé ci-dessus
 
+### Choisir le *shell* de commande par défaut
+Cette étape précise à VSCode quel *shell* utiliser pour le terminal.
 
-- ouverture du README => installation de l'extension Markdown pour la prévisualisation
+1. Appuyer sur *Ctrl+Shift+P* pour ouvrir la palette de commandes
+1. Taper "Terminal: Select Default Shell"
+1. Sélectionner
+    * "Command Prompt" sous Windows
+    * "bash" sous Mac OS ou Linux
 
-- ouverture de hello.py => installation de l'extension MS Python
+### Créer l'environnement Python du projet
+Pour isoler l'environnement du projet d'éventuelles autres versions de Python ou de bibliothèques, nous allons créer un environnement `conda` spécifique.
 
-- dans VSCode
-  choisir l'interpréteur "Python 3.8.X XX-bit ('envpython': conda)" (Ctrl+Shift+P, "Python: Select Environment" ou click en bas à gauche)
-  choisir le shell par défaut "Command Prompt" (Ctrl+Shift+P, "Terminal: Select Default Shell")
+1. Dans VSCode, ouvrir un terminal (menu *Terminal/New Terminal* ou *View/Terminal*)
+1. Taper
+    ```bash
+    conda env create
+    conda activate l1-python
+    ```
+1. Fermer le terminal en tapant
+    ```bash
+    exit
+    ```
 
-  exécuter hello.py -> OK
-  exécuter fizzbuzz.py et test_fizzbuzz.py -> OK
-  exécuter explot.py -> OK
-  exécuter exjupyter.ipnb -> OK après sélection de l'interpréteur en haut à droite
-  exécuter gui/exemple0X.py -> OK
-
-### Création et activation de l'environnement
-* Avec la distribution [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-  ```bash
-  conda env create
-  conda activate envpython
-  ```
-  L'installation des dépendances est faite en même temps que la création de l'environnement.
-
-## Utilisation courante du projet
-### Activation de l'environnement
-* Avec la distribution [python.org](https://www.python.org/)
-  ```bash
-  source .venv/bin/activate
-  ```
-* Avec la distribution [Anaconda](https://www.anaconda.com/products/individual)/[Miniconda](https://docs.conda.io/en/latest/miniconda.html)
-  ```bash
-  conda activate envpython
-  ```
-
-### Exécuter un programme
-* Hello
-  ```bash
-  python3 exercises/hello/hello.py
-  ```
-* explot (test de `matplotlib`)
-  ```bash
-  python3 exercises/explot/explot.py
-  ```
-* Kata _Fizzbuzz_ (avec tests unitaires)
-  ```bash
-  python3 exercises/fizzbuzz/test_fizzbuzz.py
-  python3 exercises/fizzbuzz/fizzbuzz.py
-  ```
-
-### Validez un programme
-```bash
-flake8 exercises/fizzbuzz/fizzbuzz.py
-mypy exercises/fizzbuzz/fizzbuzz.py
-```
-
-## Notes sur [Visual Studio Code](https://code.visualstudio.com/)/[Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-* Pour sélectionner l'interpréteur ou l'environnement Python adéquat, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Select Interpreter*.
-* Pour ouvrir un REPL Python dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Start REPL*.
-* Pour ouvrir un terminal dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Terminal: Create New Integrated Terminal*.
+### Finaliser l'installation de VSCode
+1. Dans la liste "EXPLORER" à gauche de l'écran, sélectionner le fichier "examples/hello/hello.py"
+    * accepter l'installation de l'extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+1. Sélectionner l'interpréteur Python 3.8 dans l'environnement l1-python "Python 3.8.X XX-bit ('l1-python': conda)"
+    * cliquer en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Environment")
+<!-- TODO jupyter nécessite une autre extension ? -->
+<!-- TODO activer les linters -->
 
 ## Références
 ### Python
