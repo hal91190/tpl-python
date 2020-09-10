@@ -28,7 +28,7 @@ Il faut donc lancer VSCode et ouvrir le répertoire local du projet.
   1. Cliquer sur le triangle vert en haut à droite de la fenêtre de l'éditeur Python
 * Notebook Jupyter
   1. Dans la liste "EXPLORER" à gauche de l'écran, ouvrir `examples/exjupyter/exjupyter.ipynb`
-  1. Sélectionner l'interpréteur Python "Python 3.8.X XX-bit ('l1-python': conda)" en haut à gauche de la fenêtre du notebook
+  1. Sélectionner l'interpréteur Python "Python 3.8.X XX-bit ('l1-python': conda)" en haut à droite de la fenêtre du notebook
   1. Cliquer sur les deux petits triangles (*Run all cells*) à gauche de la barre d'icones du notebook
 
 ### Faire un exercice
@@ -37,7 +37,7 @@ Il faut donc lancer VSCode et ouvrir le répertoire local du projet.
 1. Répondre aux questions en créant ou en complétant les fichiers de ce répertoire (dans l'exemple, compléter [exercises/hello/hello.py](exercises/hello/hello.py))
 
 ### Faire un exercice dans un notebook
-Il suffir pour cela d'ouvrir le notebook contenant l'exercice (par exemple [exercises\exjupyter\exjupyter.ipynb](exercises\exjupyter\exjupyter.ipynb)) et de compléter directement le notebook.
+Il suffit pour cela d'ouvrir le notebook contenant l'exercice (par exemple [exercises\exjupyter\exjupyter.ipynb](exercises\exjupyter\exjupyter.ipynb)) et de compléter directement le notebook.
 
 ### Sauvegarder les changements sur son compte `github`
 Cette procédure vous permettra de conserver vos modifications entre les séances en les sauvegardant sur `github`.
@@ -49,7 +49,8 @@ Cette procédure vous permettra de conserver vos modifications entre les séance
 1. Cliquer sur l'icone "✔" (*Commit*) en haut à gauche à côté de *SOURCE CONTROL*
 1. Envoyer les *commits* vers `github`
     1. cliquer sur "..." (*Views and more Actions...*) en haut à gauche à côté de *SOURCE CONTROL*
-    1. sélectionner *Pull, Push* puis *Sync*
+    1. sélectionner *Pull*, puis *Push* et enfin *Sync*
+    1. vérifier que les changements ont bien été pris en compte sur votre compte github
 
 ### Remarque
 * Pour ouvrir un *REPL Python* dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Start REPL*.

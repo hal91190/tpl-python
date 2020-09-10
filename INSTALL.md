@@ -229,7 +229,7 @@ Cette étape précise à VSCode quel *shell* utiliser pour le terminal.
 ### Créer l'environnement Python du projet
 Pour isoler l'environnement du projet d'éventuelles autres versions de Python ou de bibliothèques, nous allons créer un environnement `conda` spécifique.
 
-1. Dans VSCode, ouvrir un terminal (menu *Terminal/New Terminal* ou *View/Terminal*)
+1. Dans VSCode, après s'être assuré que le répertoire du projet est ouvert, ouvrir un terminal (menu *Terminal/New Terminal* ou *View/Terminal*)
     * sous Windows, `conda` n'est pas accessible dans le "Command Prompt"; pour palier ce problème, il faut personnaliser le paramètre `terminal.integrated.shellArgs.windows` de VSCode (*Ctrl+,*, rechercher "terminal shell windows", "Edit in settings.json"). Par exemple (adapter les chemins) :
         ```yaml
         {
