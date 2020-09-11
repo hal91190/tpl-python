@@ -8,6 +8,15 @@ Cette procédure est détaillée dans le document [INSTALL.md](INSTALL.md).
 Toutes les manipulations de cette section sont à effectuer dans Visual Studio Code.
 Il faut donc lancer VSCode et ouvrir le répertoire local du projet.
 
+### Récupérer les mises à jour à partir de `github`
+Il est utile à chaque début de session de travail de rappatrier les éventuelles modifications se trouvant sur votre compte `github`.
+Ce cas peut se produire si vous avez travaillé sur le projet sur une machine et que vous continuiez depuis une autre.
+C'est également nécessaire en travaillant à plusieurs sur un projet.
+
+1. Cliquer sur l'icone en forme de graphe à 3 noeuds à gauche de l'écran (*Source Control* ou *Ctrl+Shift+G*)
+1. Cliquer sur "..." (*Views and more Actions...*) en haut à gauche de *SOURCE CONTROL*
+1. Sélectionner *Pull, Push* et enfin *Sync*
+
 ### Vérifier l'environnement utilisé
 1. Dans la liste "EXPLORER" à gauche de l'écran, sélectionner le fichier "examples/hello/hello.py"
 1. Vérifier dans la barre d'état en bas à gauche que l'environnement est bien "Python 3.8.X XX-bit ('l1-python': conda)"
@@ -48,14 +57,22 @@ Cette procédure vous permettra de conserver vos modifications entre les séance
 1. Taper un message de *commit* pour indiquer ce qui a changé (par exemple "Termine l'exercice 2") dans la zone de texte à gauche juste au dessus de *Staged Changes*
 1. Cliquer sur l'icone "✔" (*Commit*) en haut à gauche à côté de *SOURCE CONTROL*
 1. Envoyer les *commits* vers `github`
-    1. cliquer sur "..." (*Views and more Actions...*) en haut à gauche à côté de *SOURCE CONTROL*
-    1. sélectionner *Pull*, puis *Push* et enfin *Sync*
+    1. cliquer sur "..." (*Views and more Actions...*) en haut à gauche de *SOURCE CONTROL*
+    1. sélectionner *Pull, Push* et enfin *Sync*
     1. vérifier que les changements ont bien été pris en compte sur votre compte github
 
 ### Remarque
 * Pour ouvrir un *REPL Python* dans l'environnement courant, il faut ouvrir la *Command Palette* (`Ctrl+Shift+P`), puis taper *Python: Start REPL*.
 
 ## Utilisation du projet dans un terminal
+Pour cette section, il faut ouvrir un terminal dans le répertoire du projet.
+
+### Récupérer les mises à jour à partir de `github`
+Taper dans le terminal :
+```bash
+git pull origin master
+```
+
 ### Activation de l'environnement
 Il est nécessaire d'activer l'environnement du projet pour avoir accès à la version adéquat de Python ainsi qu'à toutes les bibliothèques.
 
