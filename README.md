@@ -113,7 +113,7 @@ Cette procédure vous permettra de conserver vos modifications entre les séance
     ```
 1. Valider les changements à sauvegarder en créant un nouveau *commit* avec un message d'explication
     ```bash
-    git commit -m"Termine l'exercice 2"
+    git commit -m "Termine l'exercice 2"
     ```
 1. Récupérer les éventuelles mises à jour puis envoyer les *commits* vers `github`
     ```bash
