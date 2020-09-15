@@ -93,6 +93,22 @@ Il en existe plusieurs mais nous nous appuyerons sur la distribution [Miniconda]
 
 Plus d'informations (en anglais) peuvent être trouvées sur le site officiel de Miniconda ([Installation pour Windows](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html), [installation pour Max OS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html), [installation pour Linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html)).
 
+## Installer un éditeur de texte
+De nombreuses applications peuvent être utilisées pour saisir un document textuel sur un ordinateur ([LibreOffice Writer](https://www.libreoffice.org/discover/writer/), [Notepad++](https://notepad-plus-plus.org/), ...).
+Dans le contexte de la programmation, il est important que le texte du programme ne soit pas modifié par des informations de mise en forme comme le ferait un logiciel de *traitement de texte* comme LibreOffice Writer.
+
+Il faut donc choisir un logiciel dans la catégorie des [éditeurs de texte](https://fr.wikipedia.org/wiki/%C3%89diteur_de_texte) ou des [environnement de développement intégré](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) (*integrated development environment* ou *IDE* en anglais).
+Les différents outils de ce type varient beaucoup en terme de fonctionnalités et de complexité d'usage.
+
+Nous avons choisi le logiciel [Visual Studio Code](https://code.visualstudio.com/).
+Il est un bon compromis entre fonctionnalités et complexité tout en étant disponible pour les principales architectures et systèmes d'exploitation.
+
+### Installer Visual Studio Code
+1. Télécharger la version de [Visual Studio Code](https://code.visualstudio.com/) adaptée à votre système
+1. Lancer l'installation du programme à partir du fichier téléchargé ([pour Windows](https://code.visualstudio.com/docs/setup/windows), [pour Mac OS](https://code.visualstudio.com/docs/setup/mac), [pour Linux](https://code.visualstudio.com/docs/setup/linux))
+
+Nous ne détaillons pas ici la procédure d'installation car elle ne présente pas de difficulté majeure.
+
 ## Installer un *système de gestion de versions*
 Un *système de gestion de versions* (*Version Control System* ou *VCS* en anglais) est un logiciel qui conserve une trace de chaque modification importante effectuée sur un ensemble de documents.
 Dans le contexte de la programmation, il sauvegarde et suit les modifications d'un ensemble de fichiers sources.
@@ -188,22 +204,6 @@ Pour trouver la commande correspondant à votre système, rendez-vous sur la pag
     ```
 1. Fermer le terminal
 
-## Installer un éditeur de texte
-De nombreuses applications peuvent être utilisées pour saisir un document textuel sur un ordinateur ([LibreOffice Writer](https://www.libreoffice.org/discover/writer/), [Notepad++](https://notepad-plus-plus.org/), ...).
-Dans le contexte de la programmation, il est important que le texte du programme ne soit pas modifié par des informations de mise en forme comme le ferait un logiciel de *traitement de texte* comme LibreOffice Writer.
-
-Il faut donc choisir un logiciel dans la catégorie des [éditeurs de texte](https://fr.wikipedia.org/wiki/%C3%89diteur_de_texte) ou des [environnement de développement intégré](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) (*integrated development environment* ou *IDE* en anglais).
-Les différents outils de ce type varient beaucoup en terme de fonctionnalités et de complexité d'usage.
-
-Nous avons choisi le logiciel [Visual Studio Code](https://code.visualstudio.com/).
-Il est un bon compromis entre fonctionnalités et complexité tout en étant disponible pour les principales architectures et systèmes d'exploitation.
-
-### Installer Visual Studio Code
-1. Télécharger la version de [Visual Studio Code](https://code.visualstudio.com/) adaptée à votre système
-1. Lancer l'installation du programme à partir du fichier téléchargé ([pour Windows](https://code.visualstudio.com/docs/setup/windows), [pour Mac OS](https://code.visualstudio.com/docs/setup/mac), [pour Linux](https://code.visualstudio.com/docs/setup/linux))
-
-Nous ne détaillons pas ici la procédure d'installation car elle ne présente pas de difficulté majeure.
-
 ## Récupérer et initialiser le projet localement
 Cette étape va consister à créer sur votre machine une copie du dépôt `github`.
 Nous utiliserons pour cela Visual Studio Code (abrégé en VSCode dans la suite).
@@ -212,7 +212,7 @@ Cela nous permettra également d'en finaliser l'installation en ajoutant les ext
 ### Création d'une copie locale du projet
 1. Lancer VSCode
 1. Cliquer sur l'icone en forme de graphe à 3 noeuds à gauche de l'écran (*Source Control* ou *Ctrl+Shift+G*)
-1. Cliquer sur le bouton "Clone Repository" à gauche de l'écran
+1. Cliquer sur le bouton "Clone Repository" à gauche de l'écran ou *Ctrl+Shift+P* puis sélectionner "Git: Clone"
 1. Sélectionner "Clone from Github", cliquez sur "Allow" dans la boite de dialogue puis accepter les différents choix proposés dans le navigateur ou dans une boite de dialogue VSCode
 1. Sélectionner le dépôt "uvsqXXXXXXXX/l1-python" dans la liste déroulante puis choisissez l'emplacement local du projet
 1. Ouvrir ensuite le répertoire créé ci-dessus
@@ -254,7 +254,7 @@ Pour isoler l'environnement du projet d'éventuelles autres versions de Python o
 1. Dans la liste "EXPLORER" à gauche de l'écran, sélectionner le fichier "examples/hello/hello.py"
     * accepter l'installation de l'extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 1. Sélectionner l'interpréteur Python 3.8 dans l'environnement l1-python "Python 3.8.X XX-bit ('l1-python': conda)"
-    * cliquer en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Environment")
+    * cliquer en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Interpreter"
 1. Activer les outils de vérification statique (*Linters*)
     1. Ouvrir la palette de commande (*Ctrl+Shift+P*)
     1. Sélectionner la commande "Python: Select Linter"

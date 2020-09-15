@@ -20,7 +20,7 @@ C'est également nécessaire en travaillant à plusieurs sur un projet.
 ### Vérifier l'environnement utilisé
 1. Dans la liste "EXPLORER" à gauche de l'écran, sélectionner le fichier "examples/hello/hello.py"
 1. Vérifier dans la barre d'état en bas à gauche que l'environnement est bien "Python 3.8.X XX-bit ('l1-python': conda)"
-    * si ce n'est pas le cas, sélectionner l'interpréteur Python 3.8 dans l'environnement l1-python "Python 3.8.X XX-bit ('l1-python': conda)" en cliquant en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Environment")
+    * si ce n'est pas le cas, sélectionner l'interpréteur Python 3.8 dans l'environnement l1-python "Python 3.8.X XX-bit ('l1-python': conda)" en cliquant en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Interpreter")
 
 ### Exécuter un programme
 * Hello
@@ -72,6 +72,34 @@ Taper dans le terminal :
 ```bash
 git pull origin master
 ```
+
+#### Intégrer les mises à jour du projet original
+Cette étape n'est pas à effectuer à chaque fois mais quand un enseignant vous le demande.
+Elle va permettre de mettre à jour votre copie locale du projet à partir du dépôt `github` original.
+
+1. Créer un lien nommée `upstream` vers le dépôt d'origine
+    ```bash
+    git remote add upstream https://github.com/uvsq-info/l1-python
+    ```
+1. Récupérer les modifications de ce dépôt
+    ```bash
+    git fetch upstream
+    ```
+1. Se placer localement sur la *branche principale*
+    ```bash
+    git checkout master
+    ```
+1. Intégrer la branche principale de `upstream` à la branche locale
+    ```bash
+    git rebase upstream/master
+    ```
+1. Envoyer les modifications vers votre dépôt `github`
+    ```bash
+    git push -f origin master
+    ```
+
+##### Remarque
+* La commande `rebase` ci-dessus modifie l'historique du projet. Si d'autres clones existent (sur une autre machine par exemple), il sera nécessaire de les supprimer et de les cloner à nouveau.
 
 ### Activation de l'environnement
 Il est nécessaire d'activer l'environnement du projet pour avoir accès à la version adéquat de Python ainsi qu'à toutes les bibliothèques.
