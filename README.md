@@ -4,7 +4,7 @@
 L'utilisation de ce projet avec votre ordinateur personnel suppose que vous avez suivi la procédure d'installation des différents outils.
 Cette procédure est détaillée dans le document [INSTALL.md](INSTALL.md).
 
-Si vous utilisez le cartable numérique, vous devez suivre la courte procédure détaillée dans le document [CARTABLE_NUM.md](CARTABLE_num.md).
+Si vous utilisez le cartable numérique, vous devez suivre la courte procédure détaillée dans le document [CARTABLE_NUM.md](CARTABLE_NUM.md).
 
 ## Utilisation du projet avec [Visual Studio Code](https://code.visualstudio.com/)
 Toutes les manipulations de cette section sont à effectuer dans Visual Studio Code.
