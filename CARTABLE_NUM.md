@@ -30,25 +30,6 @@ Essayez de démarrer VSCode. Il est possible qu'il ne soit pas encore installé 
 1. Ouvrir ensuite le répertoire créé ci-dessus
 
 
-### Créer l'environnement Python du projet
-Pour isoler l'environnement du projet d'éventuelles autres versions de Python ou de bibliothèques, nous allons créer un environnement `conda` spécifique.
-
-1. Dans VSCode, après s'être assuré que le répertoire du projet est ouvert, ouvrir un terminal (menu *Terminal/New Terminal* ou *View/Terminal*)
-1. Taper
-    ```bash
-    conda env create
-    conda activate l1-python
-    ```
-1. Fermer le terminal en tapant
-    ```bash
-    exit
-    ```
-
-### Finaliser l'installation de VSCode
-
-Sélectionner l'interpréteur Python 3.8 dans l'environnement l1-python "Python 3.8.X XX-bit ('l1-python': conda)"
-    * cliquer en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Interpreter"
-
 
 ### Utiliser le projet
 Pour utiliser le projet, consulter le [README.md](README.md) du projet.
