@@ -13,11 +13,11 @@ Si tel n'est pas le cas, il faut faire les étapes "Création d'un compte `githu
 Essayez de démarrer VSCode. Il est possible qu'il ne soit pas encore installé sur les ordinateurs du cartable numérique pour le premier TD. Si c'est le cas, il faut:
 1. ouvrir un terminal
 1. taper:
- ```bash
-    wget https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb
-    sudo dpkg -i vscode.deb && rm vscode.deb
-    code --install-extension ms-python.python 
- ```
+    ```bash
+        wget https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb
+        sudo dpkg -i vscode.deb && rm vscode.deb
+        code --install-extension ms-python.python 
+    ```
 1. puis fermer le terminal.
 
 
