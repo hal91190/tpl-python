@@ -17,7 +17,7 @@ Essayez de démarrer VSCode. Il est possible qu'il ne soit pas encore installé 
     wget https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb
     sudo dpkg -i vscode.deb && rm vscode.deb
     code --install-extension ms-python.python 
-```
+    ```
 1. puis fermer le terminal.
 
 
