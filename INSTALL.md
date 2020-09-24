@@ -288,4 +288,4 @@ Une solution est décrite dans [Installing miniconda with zsh](https://stackover
     ```
 
 ### Guide pour les anciennes versions du cartable numérique
-Le guide d'utilisation est se trouve dans [CARTABLE_NUM.md][CARTABLE_NUM.md]
+Le guide d'utilisation est se trouve dans [CARTABLE_NUM.md](CARTABLE_NUM.md).
