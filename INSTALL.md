@@ -230,7 +230,7 @@ Cette étape précise à VSCode quel *shell* utiliser pour le terminal.
 Pour isoler l'environnement du projet d'éventuelles autres versions de Python ou de bibliothèques, nous allons créer un environnement `conda` spécifique.
 
 1. Dans VSCode, après s'être assuré que le répertoire du projet est ouvert, ouvrir un terminal (menu *Terminal/New Terminal* ou *View/Terminal*)
-    * sous Windows, `conda` n'est pas accessible dans le "Command Prompt"; pour palier ce problème, il faut personnaliser le paramètre `terminal.integrated.shellArgs.windows` de VSCode (*Ctrl+,*, rechercher "terminal shell windows", "Edit in settings.json"). Par exemple (adapter les chemins) :
+    * sous Windows, `conda` n'est pas accessible dans le "Command Prompt"; pour palier ce problème, il faut personnaliser le paramètre `terminal.integrated.shellArgs.windows` de VSCode (*Ctrl+,* (Ctrl et virgule en même temps), rechercher "terminal shell windows", "Edit in settings.json"). Par exemple (**adapter les chemins selon l'installation de miniconda**) :
         ```yaml
         {
             // Personnalise le terminal à exécuter sur Windows.
@@ -262,3 +262,30 @@ Pour isoler l'environnement du projet d'éventuelles autres versions de Python o
 
 ## Utiliser le projet
 Pour utiliser le projet, consulter le [README.md](README.md) du projet.
+
+## Dépannage des problèmes d'installation
+### `conda` n'est pas accessible dans le terminal VSCode
+Ce problème survient sur une plateforme Windows lors de l'étape "Créer l'environnement Python du projet".
+La solution suggérée ci-dessus dans le guide d'installation est délicate à mettre en œuvre.
+
+
+Une alternative consiste à :
+1. ouvrir un *anaconda prompt* (hors de VSCode)
+1. se placer dans le répertoire du projet
+1. taper les commandes dans ce terminal (`conda env create`, ...)
+
+### Le *shell* est `zsh`
+Le dernier MacOS (nommé Catalina depuis 2019) n'utilise plus le shell `bash` mais `zsh`. Cela pose des soucis lors de l'installation de miniconda.
+Une solution est décrite dans [Installing miniconda with zsh](https://stackoverflow.com/questions/50336405/installing-miniconda-with-zsh) :
+1. Modifier la variable d'environnement `PATH` dans le `~/.zshrc` :
+    ```bash
+    export PATH="~/miniconda3/bin:$PATH"
+    ```
+1. Ouvrir un terminal et taper :
+    ```bash
+    cd ~/miniconda3/bin && conda update conda
+    conda init zsh
+    ```
+
+### Guide pour les anciennes versions du cartable numérique
+Le guide d'utilisation est se trouve dans [CARTABLE_NUM.md][CARTABLE_NUM.md]
