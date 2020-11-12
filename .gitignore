@@ -130,3 +130,7 @@ dmypy.json
 
 # VSCode files
 .vscode
+
+#specific files
+cours/07_interface_graphique/correction_exo.py
+
