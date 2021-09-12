@@ -4,14 +4,14 @@
 Python est un langage de programmation *interprété*.
 Pour exécuter un programme écrit dans ce langage, il faut disposer d'un *interpréteur Python* ainsi que de certaines bibliothèques installées sur la machine.
 
-Nous utiliserons la [version 3.8](https://docs.python.org/fr/3.8/whatsnew/3.8.html) de Python.
-En 2020, c'est la version la plus récente du langage disponible sur la plupart des architectures de machine.
+Nous utiliserons la [version 3.9](https://docs.python.org/fr/3.9/whatsnew/3.9.html) de Python.
+En 2021, c'est la version la plus récente du langage disponible sur la plupart des architectures de machine.
 
 Pour simplifier l'installation des outils nécessaires, nous allons utiliser une *distribution Python*.
 Il en existe plusieurs mais nous nous appuyerons sur la distribution [Miniconda](https://docs.conda.io/en/latest/miniconda.html) qui est une version allégée de la distribution [Anaconda](https://www.anaconda.com/products/individual).
 
 ### Installer la distribution **Miniconda**
-1. Télécharger la version de [Miniconda](https://docs.conda.io/en/latest/miniconda.html) pour **Python 3.8** et **adaptée à votre système**.
+1. Télécharger la version de [Miniconda](https://docs.conda.io/en/latest/miniconda.html) pour **Python 3.9** et **adaptée à votre système**. La plupart des machines ont des processeurs de 64-bits, si vous avez sur 32-bits, téléchargez la version adaptée.
     * pour Windows, télécharger [Miniconda3 Windows 64-bit](https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe)
     * pour Mac OS, télécharger [Miniconda3 MacOSX 64-bit pkg](https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.pkg)
     * pour Linux, télécharger [Miniconda3 Linux 64-bit](https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh)
@@ -20,7 +20,7 @@ Il en existe plusieurs mais nous nous appuyerons sur la distribution [Miniconda]
       - accepter la licence ("I Agree")
       - "Install for", "Just Me (recommended)" ("Next")
       - "Choose Install Location", ("Next")
-      - "Register Miniconda3 as my default Python 3.8", ("Install")
+      - "Register Miniconda3 as my default Python 3.9", ("Install")
       - "Installation Complete", ("Next")
       - "Completing Miniconda3...", **décocher tout** ("Finish")
     * pour Mac OS, double-cliquer sur le fichier `.pkg` téléchargé précédemment puis accepter les choix par défaut
@@ -31,7 +31,7 @@ Il en existe plusieurs mais nous nous appuyerons sur la distribution [Miniconda]
         ```
         À l'affichage de :
         ```
-        Welcome to Miniconda3 py38_4.8.3
+        Welcome to Miniconda3 py39_4.10.3
 
         In order to continue the installation process, please review the license
         agreement.
@@ -73,13 +73,16 @@ Il en existe plusieurs mais nous nous appuyerons sur la distribution [Miniconda]
         # packages in environment at /home/user/miniconda3:
         #
         # Name                    Version                   Build  Channel
-        _libgcc_mutex             0.1                        main  
-        brotlipy                  0.7.0           py38h7b6447c_1000  
-        ca-certificates           2020.7.22                     0  
-        certifi                   2020.6.20                py38_0  
-        cffi                      1.14.2           py38he30daa8_0  
-        chardet                   3.0.4                 py38_1003  
-        conda                     4.8.4                    py38_0  
+        brotlipy                  0.7.0           py39h2bbff1b_1003
+        ca-certificates           2021.7.5             haa95532_1
+        certifi                   2021.5.30        py39haa95532_0
+        cffi                      1.14.6           py39h2bbff1b_0
+        chardet                   4.0.0           py39haa95532_1003
+        conda                     4.10.3           py39haa95532_0
+        conda-package-handling    1.7.3            py39h8cc25b3_1
+        console_shortcut          0.1.1                         4
+        cryptography              3.4.7            py39h71e12ea_0
+        idna                      2.10               pyhd3eb1b0_0
         [...]
         ```
         Pour vérifier la version de Python, taper :
@@ -88,7 +91,7 @@ Il en existe plusieurs mais nous nous appuyerons sur la distribution [Miniconda]
         ```
         qui doit afficher (*le dernier chiffre peut varier*) :
         ```
-        Python 3.8.3
+        Python 3.9.5
         ```
 
 Plus d'informations (en anglais) peuvent être trouvées sur le site officiel de Miniconda ([Installation pour Windows](https://conda.io/projects/conda/en/latest/user-guide/install/windows.html), [installation pour Max OS](https://conda.io/projects/conda/en/latest/user-guide/install/macos.html), [installation pour Linux](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html)).
@@ -157,6 +160,7 @@ Cependant, cette dernière s'appuie sur l'outil en ligne de commande `git` que n
     - "Select Components", ("Next")
     - "Select Start Menu Folder", ("Next")
     - "Choosing the default editor used by Git", **choisir "Use Visual Studio Code as Git's default editor"** ("Next")
+    - "Let Git decide" ("Next")
     - "Adjusting your PATH environment", déjà sélectionné "Git from the command line and also from 3rd-party software" ("Next")
     - "Choosing the SSH executable", déjà sélectionné "Use OpenSSH" ("Next")
     - "Choosing HTTPS transport backend", déjà sélectionné "Use the OpenSSL library" ("Next")
@@ -164,7 +168,7 @@ Cependant, cette dernière s'appuie sur l'outil en ligne de commande `git` que n
     - "Configuring the terminal emulator to use with Git Bash", déjà sélectionné "Use MinTTY (the default terminal of MSYS2)" ("Next")
     - "Choose the default behavior of 'git pull'", déjà sélectionné "Default (fast-forward or merge)" ("Next")
     - "Choose a credentiel helper", **choisir "None"**("Next")
-    - "Configuring extra options", déjà sélectionné "Enable file system caching" et "Enable symbolic links" ("Next")
+    - "Configuring extra options", "Enable file system caching" (déjà sélectionné) et "Enable symbolic links" ("Next")
     - "Configuring experimental options", rien n'est sélectionné ("Install")
     - "Completing the Git Setup Wizard", **décocher tout** ("Next")
 
@@ -194,7 +198,7 @@ Pour trouver la commande correspondant à votre système, rendez-vous sur la pag
     ```
     qui devrait afficher (les deux derniers numéros peuvent être différents) :
     ```bash
-    git version 2.27.0
+    git version 2.33.0
     ```
 1. Dans le même terminal, taper (**en substituant votre prénom et votre nom**) :
     ```bash
@@ -212,8 +216,8 @@ Cela nous permettra également d'en finaliser l'installation en ajoutant les ext
 ### Création d'une copie locale du projet
 1. Lancer VSCode
 1. Cliquer sur l'icone en forme de graphe à 3 noeuds à gauche de l'écran (*Source Control* ou *Ctrl+Shift+G*)
-1. Cliquer sur le bouton "Clone Repository" à gauche de l'écran ou *Ctrl+Shift+P* puis sélectionner "Git: Clone"
-1. Sélectionner "Clone from Github", cliquez sur "Allow" dans la boite de dialogue puis accepter les différents choix proposés dans le navigateur ou dans une boite de dialogue VSCode
+1. Cliquer sur le bouton "Clone Repository" à gauche de l'écran ou *Ctrl+Shift+P* puis sélectionner "Clone from Github"
+1. Cliquez sur "Allow" dans la boite de dialogue puis accepter les différents choix proposés dans le navigateur ou dans une boite de dialogue VSCode (le navigateur doit être celui où le fork a été fait dans votre espace personnel github)
 1. Sélectionner le dépôt "uvsqXXXXXXXX/l1-python" dans la liste déroulante puis choisissez l'emplacement local du projet
 1. Ouvrir ensuite le répertoire créé ci-dessus
 
@@ -221,7 +225,7 @@ Cela nous permettra également d'en finaliser l'installation en ajoutant les ext
 Cette étape précise à VSCode quel *shell* utiliser pour le terminal.
 
 1. Appuyer sur *Ctrl+Shift+P* pour ouvrir la palette de commandes
-1. Taper "Terminal: Select Default Shell"
+1. Taper "Terminal: Select Default Profile"
 1. Sélectionner
     * "Command Prompt" sous Windows
     * "bash" sous Mac OS ou Linux
@@ -230,17 +234,16 @@ Cette étape précise à VSCode quel *shell* utiliser pour le terminal.
 Pour isoler l'environnement du projet d'éventuelles autres versions de Python ou de bibliothèques, nous allons créer un environnement `conda` spécifique.
 
 1. Dans VSCode, après s'être assuré que le répertoire du projet est ouvert, ouvrir un terminal (menu *Terminal/New Terminal* ou *View/Terminal*)
-    * sous Windows, `conda` n'est pas accessible dans le "Command Prompt"; pour palier ce problème, il faut personnaliser le paramètre `terminal.integrated.shellArgs.windows` de VSCode (*Ctrl+,* (Ctrl et virgule en même temps), rechercher "terminal shell windows", "Edit in settings.json"). Par exemple (**adapter les chemins selon l'installation de miniconda**) :
-        ```yaml
-        {
-            // Personnalise le terminal à exécuter sur Windows.
-            "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-            "workbench.iconTheme": null,
-            "terminal.integrated.shellArgs.windows": ["/K", "C:\\Users\\moi\\miniconda3\\Scripts\\activate.bat C:\\Users\\moi\\miniconda3"]
-        }
+    * sous Windows, `conda` n'est pas accessible dans le "Command Prompt"; pour palier ce problème, il faut personnaliser le paramètre `terminal.integrated.shellArgs.windows` de VSCode (*Ctrl ,* (Ctrl et virgule en même temps), rechercher "terminal.integrated.profiles.windows", cliquer sur "Edit in settings.json"). Par exemple (**adapter les chemins selon l'installation de miniconda**) :
+        ``` 
+        "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "args": [
+                "/K",
+                "C:\\Users\\moi\\miniconda3\\Scripts\\activate.bat C:\\Users\\moi\\miniconda3"
+            ]
         ```
     * une autre option sous Windows est de lancer VSCode à partir d'un "Anaconda prompt"
-1. Taper
+1. Taper (Il faut garder sa connexion internet pendant la création de l'environnement)
     ```bash
     conda env create
     conda activate l1-python
@@ -253,7 +256,7 @@ Pour isoler l'environnement du projet d'éventuelles autres versions de Python o
 ### Finaliser l'installation de VSCode
 1. Dans la liste "EXPLORER" à gauche de l'écran, sélectionner le fichier "examples/hello/hello.py"
     * accepter l'installation de l'extension [Microsoft Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-1. Sélectionner l'interpréteur Python 3.8 dans l'environnement l1-python "Python 3.8.X XX-bit ('l1-python': conda)"
+1. Sélectionner l'interpréteur Python 3.9 dans l'environnement l1-python "Python 3.9.X XX-bit ('l1-python': conda)"
     * cliquer en bas à gauche dans la barre d'état ou *Ctrl+Shift+P* puis sélectionner "Python: Select Interpreter"
 1. Activer les outils de vérification statique (*Linters*)
     1. Ouvrir la palette de commande (*Ctrl+Shift+P*)
